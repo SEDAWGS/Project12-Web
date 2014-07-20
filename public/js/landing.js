@@ -1,10 +1,6 @@
 $().ready(function() {
 	Parse.initialize("LWsbarkfgcHFuK02rv0zQ3IvMfbCaicxnZN6KvnK", "AFjkKZ4IlBhhBBp1cZ5STLVB27sJTLauvy8l2rZE");
-
-	// $("#submit").click(function(){
-	// 	console.log($("#user").val());
-	// 	console.log($("#pass").val());
-
+	
 	$("#loginButton1").click(function() {
 		var email = $("#emailField1").val().trim();
 		if (validateEmail(email)) {
