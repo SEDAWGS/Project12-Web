@@ -17,10 +17,11 @@ $().ready(function() {
 
 	$("#signUpButton").click(function() {
 		var email = $("#emailField").val().trim();
-		if (validateEmail(email) ) {
+		var password = $("#passwordField").val();
+		if (validateEmail(email) && password != null && password != ''){
 			var user = new Parse.User();
 			user.set("username", email);
-			user.set("password", $("#passwordField").val());
+			user.set("password", password);
 			user.set("email", email);
 			user.signUp(null, {
 			  success: function(user) {
@@ -32,10 +33,27 @@ $().ready(function() {
 			  }
 			});
 		}
+		else if (!validateEmail(email)) {
+			alert('Enter a legit email!');
+		} 
 		else {
-			alert('Needs legit email!');
+			alert('Enter a password!');
 		}
 	});
+
+	// $('#search').focus(function() {
+		
+	// });
+
+	$("#search").keypress(function() {
+		$(".main").animate({
+			"top": "10",
+			"width": "25%"
+		}, 200, "linear", function() {
+			$("#mainTitle").hide();
+		});
+	});
+
 });
 
 function validateEmail(email) { 
