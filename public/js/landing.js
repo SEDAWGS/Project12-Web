@@ -41,10 +41,6 @@ $().ready(function() {
 		}
 	});
 
-	// $('#search').focus(function() {
-		
-	// });
-
 	$("#search").keypress(function() {
 		$(".main").animate({
 			"top": "10",
