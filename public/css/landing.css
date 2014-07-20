@@ -14,7 +14,7 @@ h1 {
 	left: 0px;
 	height: 50px;
 	width: 100%;
-	background: #4FB9FF;
+	background: #BEDCE8;
 	text-align: right;
 }
 
@@ -25,7 +25,6 @@ h1 {
 	padding-left: 20px;
 	padding-right: 20px;
 	line-height: 50px;
-	background: #4FB9FF;
 	color: black;
 	text-align: center;
 }
@@ -55,18 +54,6 @@ h1 {
 	-webkit-border-radius: 5px;
 }
 
-/*.overlay {
-     visibility: hidden;
-     position: absolute;
-     left: 0px;
-     top: 0px;
-     width:100%;
-     height:100%;
-     text-align:center;
-     z-index: 1000;
-     background-color: gray;
-}
-
 .overlay div {
      width:300px;
      margin: 100px auto;
@@ -76,9 +63,13 @@ h1 {
      text-align:center;
 }*/
 
-.input-prompt * {
+.input-prompt > input {
 	display: block;
 	position: relative;
 	text-align: center;
 	margin: 0 auto;
+}
+
+.input-group > input{
+	text-align: center;
 }
