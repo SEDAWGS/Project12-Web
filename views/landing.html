@@ -8,21 +8,54 @@
 	</head>
 	<body>
 		<div class="nav">
-			<span id="loginButton">Login</span>
-			<span id="signupButton">Signup</span>
+			<span id="loginButton" data-toggle="modal" data-target="#loginModal">Login</span>
+			<span id="signupButton" data-toggle="modal" data-target="#signupModal">Signup</span>
 		</div>
 
 		<div class="main">
-			<h1>Project 12</h1>
-			<input type="text" placeholder="Search"/>
-		</div>
+			<h1 id="mainTitle">Project 12</h1>
+				<input type="text" placeholder="Search..." id="search"/>
+				<img src="assets/loading.gif" id="searchLoading">
+    		</div>
 
-		<div id="login-dialog" title="Log In">
-			
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title text-center" id="myModalLabel">Project 12</h2>
+					</div>
+					<div class="modal-body text-center">
+						<h3><u>Log In</u></h3>						
+					</div>
+					<div class="input-prompt">
+						<input type="text" placeholder="Email" id="emailField1"/>
+						<input type="password" placeholder="Password" id="passwordField1"/>
+					</div>
+					<div>
+						<button id="loginButton1">Log in</button>
+						<button id="registerButton">Sign up now!</button>
+					</div>
+				</div>
+			</div>
 		</div>
-
-		<div id="signup-dialog" title="Sign Up">
-			
+		<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title text-center">Project 12</h2>
+					</div>
+					<div class="modal-body text-center">
+						<h3><u>Sign Up</u></h3>		
+						<div class="input-group text-center">
+							<input type="email" class="form-control" id="emailField" placeholder="Email" autofocus required>
+							<input type="password" class="form-control" id="passwordField" placeholder="Password" autofocus required>
+							<input type="submit" id="submitButton"/>
+					</div>				
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
