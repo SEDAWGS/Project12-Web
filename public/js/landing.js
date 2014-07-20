@@ -15,12 +15,30 @@ $().ready(function() {
 	// 	 });
 	// });
 
-	// $("#loginButton").click(function() {
-	// 	el = document.getElementById("login-dialog");
-	// 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-	// });
-	// $("#signupButton").click(function() {
-	// 	el = document.getElementById("signup-dialog");
-	// 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-	// });
+	$("#signUpButton").click(function() {
+		var email = $("#emailField").val().trim();
+		if (validateEmail(email) ) {
+			var user = new Parse.User();
+			user.set("username", email);
+			user.set("password", $("#passwordField").val());
+			user.set("email", email);
+			user.signUp(null, {
+			  success: function(user) {
+			  	$("#signupModal").modal("hide");
+			    $("#loginModal").modal("show");
+			  },
+			  error: function(user, error) {
+			    alert("Error " + error.code + ": " + error.message);
+			  }
+			});
+		}
+		else {
+			alert('Needs legit email!');
+		}
+	});
 });
+
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 

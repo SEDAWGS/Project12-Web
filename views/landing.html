@@ -17,16 +17,6 @@
 			<input type="text" placeholder="Search"/>
 		</div>
 
-		<!-- <div class="overlay" id="login-dialog" >
-			<div title="Log In">
-				<h2>Log In</h2>
-			</div>
-		</div>
-		<div class="overlay" id="signup-dialog" >
-			<div title="Sign Up">
-				<h2>Sign Up</h2>
-			</div>
-		</div> -->
 		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -49,11 +39,10 @@
 					</div>
 					<div class="modal-body text-center">
 						<h3><u>Sign Up</u></h3>		
-						<div class="input-group" style="padding: 20px;">
-						<input type="email" class="form-control" id="email-field" placeholder="Email" style="text-align:center;" autofocus>
-						<span class="input-group-btn">
-							<button class="btn btn-success" data-dismiss="modal">OK</button>
-						</span>
+						<div class="input-group text-center">
+							<input type="email" class="form-control" id="emailField" placeholder="Email" autofocus required>
+							<input type="password" class="form-control" id="passwordField" placeholder="Password" autofocus required>
+							<input type="submit" id="signUpButton"/>
 					</div>				
 					</div>
 				</div>
