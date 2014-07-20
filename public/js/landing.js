@@ -1,7 +1,9 @@
 var animated = false;
-
+var running = false;
 $().ready(function() {
 	Parse.initialize("LWsbarkfgcHFuK02rv0zQ3IvMfbCaicxnZN6KvnK", "AFjkKZ4IlBhhBBp1cZ5STLVB27sJTLauvy8l2rZE");
+
+	$("#searchLoading").hide();
 
 	$("#loginButton1").click(function() {
 		var email = $("#emailField1").val().trim();
@@ -56,7 +58,7 @@ $().ready(function() {
 
 	$("#search").keypress(function(e) {
 		
-		if (!animated) {
+		if (!animated) { //only animate once
 			$(".main").animate({
 				"top": "10",
 				"width": "25%"
@@ -65,13 +67,30 @@ $().ready(function() {
 				animated = true;
 			});
 		}
-		if (e.which == 13) {
-			Parse.Cloud.run('querySublets', {query: $('#search').val()}, {
+
+		if (e.which == 13 && !running) {
+			var query = $('#search').val();
+			running = true;
+			$("#searchLoading").show();
+			Parse.Cloud.run('querySublets', {query: query}, {
 				success: function(results) {
-					alert(results);
+					if (results != null && results[0] != null) {
+						var list = [];
+						$.each(results, function(index, val) {
+							list.push(val.get('description'));
+						});
+						alert(list);
+					}
+					else {
+						alert('String "' + query + '" not found.');
+					}
+					running = false;
+					$("#searchLoading").hide();
 				},
 				error: function() {
-					alert('not found');
+					alert('ERROR WHILE SEARCHING.');
+					running = false;					
+					$("#searchLoading").hide();
 				}
 			});
 		}
