@@ -14,40 +14,4 @@ $().ready(function() {
 	// 		}
 	// 	 });
 	// });
-
-	$("#signupButton").click(function() {
-		$("#signup-dialog").dialog({
-				modal: true,
-				draggable: false,
-				resizable: false,
-			    position: ['center', 'top'],
-			    show: 'blind',
-			    hide: 'blind',
-				width: 400,
-				dialogClass: 'ui-dialog-osx',
-				buttons: {
-					"OK": function() {
-						$(this).dialog("close");
-					}
-				}
-			});
-	});
-
-	$("#loginButton").click(function() {
-		$("#login-dialog").dialog({
-				modal: true,
-				draggable: false,
-				resizable: false,
-			    position: ['center', 'top'],
-			    show: 'blind',
-			    hide: 'blind',
-				width: 400,
-				dialogClass: 'ui-dialog-osx',
-				buttons: {
-					"OK": function() {
-						$(this).dialog("close");
-					}
-				}
-			});
-	});
 });
