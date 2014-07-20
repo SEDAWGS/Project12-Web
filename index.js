@@ -9,12 +9,12 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/', function(req, res) {
+app.get('/testLogin', function(req, res) {
 	res.render('index.html');
 });
 
-app.get ('*', function(req, res){
-	res.redirect ('/');
+app.get('/', function(req, res) {
+	res.render('landing.html');
 });
 
 var port = process.env.PORT || 5000;
