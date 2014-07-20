@@ -9,13 +9,6 @@ h1 {
 	text-align: center;
 }
 
-form {
-	width: 50%;
-	padding-left: 25%;
-	padding-right: 25%;
-	height: 30px;
-}
-
 input {
 	width: 90%;
 	height: 70%;
@@ -24,8 +17,12 @@ input {
 	text-align: center;
 }
 
-.login {
+#login {
 	text-align: center;
+	width: 50%;
+	padding-left: 25%;
+	padding-right: 25%;
+	height: 30px;
 }
 
 #submit {
