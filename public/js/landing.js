@@ -5,17 +5,32 @@ $().ready(function() {
 	// 	console.log($("#user").val());
 	// 	console.log($("#pass").val());
 
-	// 	Parse.User.logIn($("#user").val(), $("#pass").val(), {
-	// 		success: function(user) {
-	// 			alert ('login succesful!');
-	// 		},
-	// 		error: function(user, error) {
-	// 			alert('Login failed. Error ' + error.code + ': ' + error.message);
-	// 		}
-	// 	 });
-	// });
+	$("#loginButton1").click(function() {
+		var email = $("#emailField1").val().trim();
+		if (validateEmail(email)) {
+			Parse.User.logIn(email, $("#passwordField1").val(), {
+				success: function(user) {
+					if (!user.authenticated()) {
+						user.logOut();
+						alert ('Email unsuccessfully validated.');
+					}
+					alert ('login succesful!');
+				},
+				error: function(user, error) {
+					alert('Login failed. Error ' + error.code + ': ' + error.message);
+				}
+			});
+		} else {
+			alert('invalid email format');
+		}
+	});
 
-	$("#signUpButton").click(function() {
+	$("#registerButton").click(function() {
+		$("#loginModal").modal("hide");
+	    $("#signupModal").modal("show");
+	});
+
+	$("#submitButton").click(function() {
 		var email = $("#emailField").val().trim();
 		var password = $("#passwordField").val();
 		if (validateEmail(email) && password != null && password != ''){
