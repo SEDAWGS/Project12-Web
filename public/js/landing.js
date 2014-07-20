@@ -1,6 +1,8 @@
+var animated = false;
+
 $().ready(function() {
 	Parse.initialize("LWsbarkfgcHFuK02rv0zQ3IvMfbCaicxnZN6KvnK", "AFjkKZ4IlBhhBBp1cZ5STLVB27sJTLauvy8l2rZE");
-	
+
 	$("#loginButton1").click(function() {
 		var email = $("#emailField1").val().trim();
 		if (validateEmail(email)) {
@@ -52,15 +54,28 @@ $().ready(function() {
 		}
 	});
 
-	$("#search").keypress(function() {
-		$(".main").animate({
-			"top": "10",
-			"width": "25%"
-		}, 200, "linear", function() {
-			$("#mainTitle").hide();
-		});
+	$("#search").keypress(function(e) {
+		
+		if (!animated) {
+			$(".main").animate({
+				"top": "10",
+				"width": "25%"
+			}, 200, "linear", function() {
+				$("#mainTitle").hide();
+				animated = true;
+			});
+		}
+		if (e.which == 13) {
+			Parse.Cloud.run('querySublets', {query: $('#search').val()}, {
+				success: function(results) {
+					alert(results);
+				},
+				error: function() {
+					alert('not found');
+				}
+			});
+		}
 	});
-
 });
 
 function validateEmail(email) { 
