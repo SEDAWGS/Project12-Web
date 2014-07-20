@@ -8,8 +8,8 @@
 	</head>
 	<body>
 		<div class="nav">
-			<span id="loginButton">Login</span>
-			<span id="signupButton">Signup</span>
+			<span id="loginButton" data-toggle="modal" data-target="#loginModal">Login</span>
+			<span id="signupButton" data-toggle="modal" data-target="#signupModal">Signup</span>
 		</div>
 
 		<div class="main">
@@ -17,12 +17,47 @@
 			<input type="text" placeholder="Search"/>
 		</div>
 
-		<div id="login-dialog" title="Log In">
-			
+		<!-- <div class="overlay" id="login-dialog" >
+			<div title="Log In">
+				<h2>Log In</h2>
+			</div>
 		</div>
-
-		<div id="signup-dialog" title="Sign Up">
-			
+		<div class="overlay" id="signup-dialog" >
+			<div title="Sign Up">
+				<h2>Sign Up</h2>
+			</div>
+		</div> -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title text-center" id="myModalLabel">Project 12</h2>
+					</div>
+					<div class="modal-body text-center">
+						<h3><u>Log In</u></h3>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title text-center" id="myModalLabel">Project 12</h2>
+					</div>
+					<div class="modal-body text-center">
+						<h3><u>Sign Up</u></h3>		
+						<div class="input-group" style="padding: 20px;">
+						<input type="email" class="form-control" id="email-field" placeholder="Email" style="text-align:center;" autofocus>
+						<span class="input-group-btn">
+							<button class="btn btn-success" data-dismiss="modal">OK</button>
+						</span>
+					</div>				
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

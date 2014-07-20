@@ -14,4 +14,13 @@ $().ready(function() {
 	// 		}
 	// 	 });
 	// });
+
+	// $("#loginButton").click(function() {
+	// 	el = document.getElementById("login-dialog");
+	// 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+	// });
+	// $("#signupButton").click(function() {
+	// 	el = document.getElementById("signup-dialog");
+	// 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+	// });
 });
