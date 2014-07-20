@@ -1,7 +1,7 @@
 Parse.Cloud.define("querySublets", function(request, response) {
 	var query = new Parse.Query("SLObject");
 	var searchQuery = request.params.query;
-	if (serachQuery == null || searchQuery == '') {
+	if (searchQuery == null || searchQuery == '') {
 		response.error("No Search Defined");
 	}
 	query.equalTo("tags", searchQuery.toLowerCase());
