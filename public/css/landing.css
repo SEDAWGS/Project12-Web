@@ -1,3 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$red:   #E0645C;
+$dark:  #444444;
+$light: #999999;
+$blue:  #2DB6CF;
+$green: #46b98a;
+$white: #FFFFFF;
+
+$arial: Arial,sans-serif;
+$font-face: 'Open Sans', sans-serif;
+
 * {
 	background: white;
 	font-family: 'Raleway', sans-serif;
@@ -8,42 +20,86 @@ h1 {
 	font-size: 30px;
 	text-align: center;
 }
-
+.circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	margin-left: 40%;
+	margin-top:10%;
+	margin-right: 40%;
+	margin-bottom: 10%;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(http://1.bp.blogspot.com/-sB2YS0v7sRA/Ua3kCJqKgGI/AAAAAAAAEq4/MyqhX2BpYP0/s1600/12.jpg) no-repeat;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	}
 .nav {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	height: 50px;
+	height:50px;
 	width: 100%;
-	background: #4FB9FF;
+	background: #80ff80;
 	text-align: right;
 }
 
 .nav span {
 	width: 100px;
 	height: 100%;
-	margin-right: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
-	line-height: 50px;
-	background: #4FB9FF;
+	line-height: 35px;
 	color: black;
+	background: #8FC1E3;
 	text-align: center;
 }
 
 .nav span:hover {
-	background: #8FC1E3;
+	background: #FF6347;
 	cursor: pointer;
 }
+.navButton {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0px;
+  padding: 7px;
+  padding-left:10px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  text-align: center; /* DELETE WHEN WIDTH AUTO */
 
+
+}
+#loginButton{
+	margin-right: 0px;
+	color: $white;
+
+}
+#signupButton{
+	margin-right: 20px;
+	padding-right: 30px !important;
+}
 .main{
 	z-index: 10000;
 	text-align: center;
 	position: absolute;
+	font-family: 'Raleway', sans-serif;
 	top: 45%;
 	width: 100%;
 }
 
+ 
 h1 {
 	font-weight: 400 !important;
 }
