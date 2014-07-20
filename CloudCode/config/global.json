@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Project12": {
+            "applicationId": "LWsbarkfgcHFuK02rv0zQ3IvMfbCaicxnZN6KvnK", 
+            "masterKey": "lmQ3dOaSw12gqGGVCvxTqjfqXiFWP8sIkNXJ0njY"
+        }, 
+        "_default": {
+            "link": "Project12"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.19"
+    }
+}
