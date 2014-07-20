@@ -1,0 +1,28 @@
+* {
+	background: white;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: 30px;
+	text-align: center;
+}
+
+form input {
+	width: 20%;
+	padding-left: 20%;
+	padding-right: 20%;
+	height: 30px;
+	text-align: center;
+}
+
+#submit {
+	width: 20px !important;
+}
+
+.garbageContainer {
+	padding: 20px;
+	padding-bottom: 50px;
+	margin: 20px;
+}
